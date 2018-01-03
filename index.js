@@ -27,6 +27,13 @@ exports.handler = function(event, context) {
 };
 
 
+function valueToText(value) {
+  if (value instanceof Object) {
+    return JSON.stringify(value, null, 2);
+  }
+  return value;
+}
+
 function handleData(Sns, callback) {
   console.log('handleData', Sns);
   var req = https.request(slack_req_opts, function (res) {
@@ -75,7 +82,7 @@ function handleData(Sns, callback) {
     } else {
       for ( var key in message) {
         attachmentMarkdownLines.push('*' + key + '*');
-        attachmentMarkdownLines.push(message[key]);
+        attachmentMarkdownLines.push(valueToText(message[key]));
         attachmentMarkdownLines.push('');
       }
     }
