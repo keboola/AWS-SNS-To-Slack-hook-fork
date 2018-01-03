@@ -65,6 +65,28 @@ var sampleEvents = [
         }
       }
     ]
+  },
+  {
+    "Records": [
+      {
+        "EventSource": "aws:sns",
+        "EventVersion": "1.0",
+        "EventSubscriptionArn": "arn:aws:sns:us-east-1:147946154733:Martin-lambda-test:167e76f7-39b4-4c38-985f-d0aa17aa3ca9",
+        "Sns": {
+          Type: 'Notification',
+          MessageId: 'a89f5b29-b31b-5eaf-87e9-09efa8edb4c2',
+          TopicArn: 'arn:aws:sns:us-east-1:147946154733:KBC_support',
+          Subject: null,
+          Message: '{"version":"0","id":"4fafe819-c574-b887-3a5b-71ba09a54c2b","detail-type":"AWS Health Event","source":"aws.health","account":"147946154733","time":"2018-01-01T00:00:00Z","region":"us-east-1","resources":[],"detail":{"eventArn":"arn:aws:health:us-east-1::event/AWS_BILLING_NOTIFICATION_1514936720","service":"BILLING","eventTypeCode":"AWS_BILLING_NOTIFICATION","eventTypeCategory":"accountNotification","startTime":"Mon, 1 Jan 2018 00:00:00 GMT","eventDescription":[{"language":"en_US","latestDescription":"You recently received an email from us regarding a Free Tier Limit Alert which stated that you have exceeded, or are forecasted to exceed, the free tier limits for one or more AWS services. We sent this email in error; please ignore the email. You can access your AWS account to review your service usage and any associated charges related to that usage. Note that the usage and billing data you see in your AWS account are correct. For more information on AWS Free Tier please visit https://aws.amazon.com/free/ . We apologize for any inconvenience this may have caused."}]}}',
+          Timestamp: '2018-01-02T23:45:58.261Z',
+          SignatureVersion: '1',
+          Signature: 'MOGoc+StyLNqxBuPLRevWuQSpl+U+FOZrCyVykaZ254WAjXAz0pz/a19/Zp801+4rR5Lm/a2YbveDQayV4TmmRrlEmEUlk6/TDmFTkO1welDQyJ05Qf5ueWd7Hcn4nT+1+ChclwhUK61XSqnKH8YZFU/OX+pG1VNpk0p2NMn75c+dI6HBdhsJqoTeNYbNK7cwV2TchirG+M/5yRXJ2Q0nDqNLwvUQXHOWB1VmBZjQLtgph88qHHKq3XSF+i6pgxLK/P0tZ9cAzqpWvl6uOwMKp6SAnlFBFBbf3g+XxhJDv4pi0hdszT4TnjhYJMIPGpeBKkxUB/K/ZzmPh0rua/OLA==',
+          SigningCertUrl: 'https://sns.us-east-1.amazonaws.com/SimpleNotificationService-433026a4050d206028891664da859041.pem',
+          UnsubscribeUrl: 'https://sns.us-east-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-east-1:147946154733:KBC_support:add4d81a-eb67-42b6-95e1-fa0bb27a3ceb',
+          MessageAttributes: {}
+        }
+      }
+    ]
   }
 ];
 
