@@ -10,3 +10,4 @@ script:
  - gulp zip
  - gulp upload-us
  - gulp upload-eu
+ - gulp upload-aus
