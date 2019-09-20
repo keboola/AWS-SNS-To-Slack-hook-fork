@@ -11,7 +11,7 @@ jobs:
       script:
         - gulp
         - gulp zip
-        >-
+        - >-
           AWS_ACCESS_KEY_ID=$TESTING_AWS_ACCESS_KEY_ID
           AWS_SECRET_ACCESS_KEY=$TESTING_AWS_SECRET_ACCESS_KEY
           gulp upload-us
@@ -19,15 +19,15 @@ jobs:
       script:
         - gulp
         - gulp zip
-        >-
+        - >-
           AWS_ACCESS_KEY_ID=$PRODUCTION_AWS_ACCESS_KEY_ID
           AWS_SECRET_ACCESS_KEY=$PRODUCTION_AWS_SECRET_ACCESS_KEY
           gulp upload-us
-        >-
+        - >-
           AWS_ACCESS_KEY_ID=$PRODUCTION_AWS_ACCESS_KEY_ID
           AWS_SECRET_ACCESS_KEY=$PRODUCTION_AWS_SECRET_ACCESS_KEY
           gulp upload-eu
-        >-
+        - >-
           AWS_ACCESS_KEY_ID=$PRODUCTION_AWS_ACCESS_KEY_ID
           AWS_SECRET_ACCESS_KEY=$PRODUCTION_AWS_SECRET_ACCESS_KEY
           gulp upload-us-east-2
