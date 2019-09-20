@@ -5,9 +5,30 @@ sudo: false
 install:
 - npm install
 - npm install -g gulp
-script:
- - gulp
- - gulp zip
- - gulp upload-us
- - gulp upload-eu
- - gulp upload-us-east-2
+jobs:
+  include:
+    - stage: build and deploy to testing
+      script:
+        - gulp
+        - gulp zip
+        >-
+          AWS_ACCESS_KEY_ID=$TESTING_AWS_ACCESS_KEY_ID
+          AWS_SECRET_ACCESS_KEY=$TESTING_AWS_SECRET_ACCESS_KEY
+          gulp upload-us
+    - stage: build and deploy to production
+      script:
+        - gulp
+        - gulp zip
+        >-
+          AWS_ACCESS_KEY_ID=$PRODUCTION_AWS_ACCESS_KEY_ID
+          AWS_SECRET_ACCESS_KEY=$PRODUCTION_AWS_SECRET_ACCESS_KEY
+          gulp upload-us
+        >-
+          AWS_ACCESS_KEY_ID=$PRODUCTION_AWS_ACCESS_KEY_ID
+          AWS_SECRET_ACCESS_KEY=$PRODUCTION_AWS_SECRET_ACCESS_KEY
+          gulp upload-eu
+        >-
+          AWS_ACCESS_KEY_ID=$PRODUCTION_AWS_ACCESS_KEY_ID
+          AWS_SECRET_ACCESS_KEY=$PRODUCTION_AWS_SECRET_ACCESS_KEY
+          gulp upload-us-east-2
+      if: (branch = master)
