@@ -95,6 +95,10 @@ gulp.task('upload-eu', function () {
   return upload('eu-central-1');
 });
 
+gulp.task('upload-us-east-2  ', function () {
+  return upload('us-east-2');
+});
+
 // The key to deploying as a single command is to manage the sequence of events.
 gulp.task('default', function(callback) {
   return runSequence(
